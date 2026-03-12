@@ -1,0 +1,176 @@
+.admin-sidebar {
+    width: 240px;
+    background: #fff;
+    border-right: 1px solid #e0e0e0;
+    padding: 1rem;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Logo Section */
+.admin-sidebar .logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+    text-decoration: none;
+}
+
+.admin-sidebar .logo:hover {
+    background-color: transparent;
+    color: inherit;
+}
+
+.logo-icon {
+    width: 36px;
+    height: 36px;
+}
+
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+    white-space: nowrap;
+}
+
+/* Navigation */
+.admin-sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex: 1;
+}
+
+.admin-sidebar li {
+    margin-bottom: 0.5rem;
+}
+
+.admin-sidebar .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    text-decoration: none;
+    color: #333;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+/* Navigation Icons */
+.nav-icon {
+    width: 20px;
+    height: 20px;
+    filter: brightness(0) saturate(100%) invert(62%) sepia(7%) saturate(648%) hue-rotate(204deg) brightness(95%) contrast(86%);
+    /* This filter converts to #8C8E98 */
+}
+
+/* Hover Effects */
+.admin-sidebar .nav-link:hover {
+    background-color: #25388c;
+    color: white;
+}
+
+.admin-sidebar .nav-link:hover .nav-icon {
+    filter: brightness(0) saturate(100%) invert(100%);
+    /* This filter converts to white */
+}
+
+/* Active State */
+.admin-sidebar .nav-link.active {
+    background-color: #2B3A9D;
+    color: white;
+    font-weight: 600;
+}
+
+.admin-sidebar .nav-link.active .nav-icon {
+    filter: brightness(0) saturate(100%) invert(100%);
+    /* This filter converts to white */
+}
+
+/* User Profile Section */
+.user-profile {
+    margin-top: auto;
+    padding-top: 1rem;
+    border-top: 1px solid #e5e7eb;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+}
+
+.admin-sidebar .user-info {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 0.75rem !important;
+    flex: 1;
+    min-width: 0; /* Allows text to truncate */
+}
+
+.admin-sidebar .user-avatar,
+.admin-sidebar .user-avatar .avatar-root {
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 50% !important;
+    flex-shrink: 0 !important;
+    display: inline-flex !important;
+}
+
+.admin-sidebar .user-details {
+    flex: 1 !important;
+    min-width: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+}
+
+.user-name {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #333;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.2;
+    margin: 0;
+}
+
+.user-email {
+    font-size: 0.6875rem;
+    color: #6b7280;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.2;
+    margin: 0;
+}
+
+.logout-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease;
+    flex-shrink: 0;
+}
+
+.logout-btn:hover {
+    background-color: #f3f4f6;
+}
+
+.logout-icon {
+    width: 18px;
+    height: 18px;
+    filter: brightness(0) saturate(100%) invert(27%) sepia(96%) saturate(4456%) hue-rotate(343deg) brightness(97%) contrast(91%);
+    /* This filter converts to red color like in Header */
+}
+
+.logout-btn:hover .logout-icon {
+    filter: brightness(0) saturate(100%) invert(20%) sepia(100%) saturate(6000%) hue-rotate(343deg) brightness(90%) contrast(95%);
+    /* Darker red on hover */
+}

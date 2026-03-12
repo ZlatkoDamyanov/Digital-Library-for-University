@@ -1,0 +1,98 @@
+/* BookList компонент стилове - специфични селектори */
+.book-list-container .book-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 15px;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+/* Съобщения за статус - специфични за BookList */
+.book-list-container .status-text {
+  color: #6b7280;
+  text-align: center;
+  font-size: 16px;
+  padding: 40px 20px;
+}
+
+.book-list-container .status-text.error {
+  color: #ef4444;
+}
+
+/* Responsive grid for different screen sizes */
+@media (max-width: 1200px) {
+  .book-list-container .book-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .book-list-container .book-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    padding: 0 8px;
+  }
+
+  .book-list-container .status-text {
+    font-size: 15px;
+    padding: 35px 18px;
+  }
+}
+
+@media (max-width: 768px) {
+  .book-list-container .book-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    padding: 0 5px;
+  }
+
+  .book-list-container .status-text {
+    font-size: 14px;
+    padding: 30px 15px;
+  }
+}
+
+@media (max-width: 640px) {
+  .book-list-container .book-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    padding: 0 3px;
+  }
+}
+
+@media (max-width: 480px) {
+  .book-list-container .book-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    padding: 0 2px;
+  }
+
+  .book-list-container .status-text {
+    font-size: 14px;
+    padding: 25px 10px;
+  }
+}
+
+@media (max-width: 360px) {
+  .book-list-container .book-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+    padding: 0 1px;
+  }
+
+  .book-list-container .status-text {
+    font-size: 13px;
+    padding: 20px 8px;
+  }
+}
+
+/* Very small screens - single column if needed */
+@media (max-width: 280px) {
+  .book-list-container .book-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 0 5px;
+  }
+} 

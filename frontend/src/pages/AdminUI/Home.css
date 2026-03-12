@@ -1,0 +1,300 @@
+.dashboard-page {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .dashboard-header h1 {
+    font-size: 1.75rem;
+    color: #111;
+  }
+  
+  .search-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .search-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    opacity: 0.6;
+    pointer-events: none;
+  }
+  
+  .dashboard-search {
+    padding: 0.5rem 1rem 0.5rem 2.5rem;
+    border: 1px solid #CBD5E1;
+    border-radius: 8px;
+    width: 300px;
+    font-size: 0.9rem;
+  }
+  
+  .stats-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .stat-card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 1rem;
+  }
+  
+  .stat-title {
+    font-size: 0.875rem;
+    color: #555;
+  }
+  
+  .stat-value {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 0.5rem;
+  }
+  
+  .stat-change {
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    font-weight: 600;
+  }
+
+  .stat-change-positive {
+    color: #16a34a; /* Green for increases */
+  }
+
+  .stat-change-negative {
+    color: #dc2626; /* Red for decreases */
+  }
+
+  .stat-change-neutral {
+    color: #6b7280; /* Gray for no change */
+  }
+  
+  .dashboard-content {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+  
+  .side-col {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .side-col:first-child {
+    flex: 0.43;
+  }
+  
+  .side-col.recent-books {
+    flex: 0.57;
+  }
+  
+  .card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 1rem;
+  }
+  
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .view-all {
+    font-size: 0.875rem;
+    color: #3b82f6;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .card-body {
+    margin-top: 1rem;
+  }
+  
+  .empty-state {
+    text-align: center;
+    color: #888;
+  }
+  
+  .empty-state-icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 0.75rem;
+    background: #f3f4f6;
+    border-radius: 50%;
+  }
+  
+  .empty-title {
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+  }
+  
+  .empty-text {
+    font-size: 0.875rem;
+  }
+  
+  .add-book {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: #f9fafb;
+    border-radius: 8px;
+    color: #111;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  
+  .recent-item {
+    display: flex;
+    gap: 0.75rem;
+    align-items: center;
+    margin-top: 0.75rem;
+  }
+  
+  .recent-item img {
+    width: 40px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 4px;
+  }
+  
+  .recent-info a {
+    font-weight: 500;
+    color: #111;
+    text-decoration: none;
+  }
+  
+  .subtitle {
+    margin: 0.25rem 0;
+    font-size: 0.875rem;
+    color: #555;
+  }
+  
+  .date {
+  font-size: 0.75rem;
+  color: #888;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.calendar-icon {
+  width: 16px !important;
+  height: 16px !important;
+  min-width: 16px;
+  min-height: 16px;
+  max-width: 16px;
+  max-height: 16px;
+  opacity: 0.7;
+  flex-shrink: 0;
+}
+
+  /* Account Request Styles */
+.account-requests .card-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+
+/* Account Request Empty State - Override grid for centered display */
+.account-requests .card-body .empty-state {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 1rem 2rem;
+}
+
+.request-item {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  padding: 0.5rem;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+
+.request-item:hover {
+  background-color: #f9fafb;
+}
+
+.request-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.request-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  align-items: flex-start;
+}
+
+.request-name {
+  font-weight: 500;
+  color: #111827;
+  margin: 0;
+  font-size: 0.875rem;
+}
+
+.request-email {
+  font-size: 0.75rem;
+  color: #6b7280;
+  margin: 0;
+}
+
+
+
+  /* Borrow Request Title - Limited to one line */
+  .dashboard-page .recent-info .borrow-title {
+    display: block !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+    max-width: 350px !important;
+    width: 350px !important;
+    line-height: 1.5 !important;
+  }
+
+  /* Small User Avatar */
+  .dashboard-page .recent-item .user-avatar-small {
+    width: 20px !important;
+    height: 20px !important;
+    border-radius: 50% !important;
+    object-fit: cover !important;
+    margin-right: 0.25rem !important;
+    flex-shrink: 0 !important;
+    aspect-ratio: 1/1 !important;
+    display: inline-block !important;
+  }
+
+  /* Book Placeholder Styles - Admin specific */
+  .dashboard-page .book-placeholder {
+    width: 40px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f3f4f6;
+    border: 1px solid #e5e7eb;
+    border-radius: 4px;
+    font-size: 1.5rem;
+    color: #6b7280;
+    flex-shrink: 0;
+  }

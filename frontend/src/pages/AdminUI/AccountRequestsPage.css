@@ -1,0 +1,354 @@
+.account-requests-page {
+    padding: 0 0 2rem 0;
+    background: #f5f7fa;
+  }
+  
+  .requests-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .requests-header h1 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #111827;
+    margin: 0;
+  }
+  
+  .actions {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .sort-btn {
+    background: none;
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+  
+  .sort-icon {
+    font-size: 1rem;
+  }
+  
+  .table-container {
+    overflow-x: auto;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  }
+  
+  .requests-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 800px;
+  }
+  
+  .requests-table th,
+  .requests-table td {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid #e5e7eb;
+    vertical-align: middle;
+  }
+  
+  .requests-table th:last-child,
+.requests-table td:last-child {
+  text-align: center;
+}
+
+.requests-table td:last-child {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+  
+  .requests-table th {
+    background: #f9fafb;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #374151;
+  }
+  
+  .requests-table td {
+    vertical-align: middle;
+  }
+  
+  .user-cell {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+  
+  .user-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  
+  .name {
+    font-size: 14px;
+    font-weight: 500;
+    color: #111827;
+  }
+  
+  .email {
+    font-size: 0.75rem;
+    color: #6b7280;
+  }
+
+  /* Smaller font size for Date Joined and University ID No columns - matching All Users */
+  .requests-table td:nth-child(2),
+  .requests-table td:nth-child(3) {
+    font-size: 0.9rem;
+  }
+  
+  .role-badge {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: capitalize;
+  }
+  
+  .role-badge.user {
+    background: #dcfce7;
+    color: #16a34a;
+  }
+  
+  .role-badge.admin {
+    background: #fef2f2;
+    color: #dc2626;
+  }
+  
+  .action-cell {
+  display: flex;
+  flex-direction: row;
+  gap: 0.75rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.account-status {
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.025em;
+  cursor: pointer;
+}
+
+.account-status.approve {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.account-status.approve:hover {
+  background: #bbf7d0;
+}
+
+.account-status.reject {
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+.account-status.reject:hover {
+  background: #fee2e2;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 0.125rem;
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 12px;
+  padding: 2rem;
+  min-width: 400px;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+/* Modal Close Button */
+.modal-close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #6b7280;
+  cursor: pointer;
+  padding: 0.5rem;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.modal-close-btn:hover {
+  background-color: #f3f4f6;
+  color: #374151;
+}
+
+/* Modal Icon Styles */
+.modal-icon {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.icon-circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.approve-circle {
+  background: transparent;
+  color: #4C7B62;
+}
+
+.reject-circle {
+  background: transparent;
+  color: #F46F70;
+}
+
+/* Modal Icon Image Styles */
+.modal-icon-img {
+  width: 80px;
+  height: 80px;
+  z-index: 1;
+  object-fit: contain;
+}
+
+/* Modal Content */
+.modal-content h3 {
+  margin: 0 0 1rem 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #111827;
+  text-align: center;
+  width: 100%;
+}
+
+.modal-content p {
+  margin: 0 0 1rem 0;
+  color: #6b7280;
+  font-size: 1rem;
+  line-height: 1.5;
+  text-align: center;
+  width: 100%;
+}
+
+/* Modal Actions */
+.modal-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1.5rem;
+  width: 100%;
+  flex-shrink: 0;
+  padding: 0 1rem;
+}
+
+.approve-btn,
+.reject-btn {
+  padding: 0.75rem 2rem;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+  min-width: 200px;
+  max-width: 300px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.approve-btn {
+  justify-content: center;
+  background: #4C7B62;
+  color: white;
+}
+
+.approve-btn:hover {
+
+  background: #3a5f4a;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(76, 123, 98, 0.3);
+}
+
+.reject-btn {
+  background: #F46F70;
+  color: white;
+}
+
+.reject-btn:hover {
+  background: #f25456;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(244, 111, 112, 0.3);
+}
+
+/* Modal Specific Styles */
+.approve-modal {
+  border: 2px solid rgba(76, 123, 98, 0.1);
+}
+
+.reject-modal {
+  border: 2px solid rgba(244, 111, 112, 0.1);
+}
+  
+  

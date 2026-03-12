@@ -1,0 +1,145 @@
+/* SearchBar styles with increased specificity */
+.search-bar {
+  display: flex; 
+  align-items: center;
+  width: 100%;
+  max-width: 500px;
+  padding: 20px 20px; 
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e7eb;
+  margin: 0 auto;
+}
+
+/* Focus state for the search bar container */
+.search-bar:focus-within {
+  background-color: #ffffff;
+  border-color: #e5e7eb;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar .search-input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-size: 16px;
+  color: #000000;
+  outline: none;
+  padding: 0;
+  margin: 0;
+  font-family: inherit;
+}
+
+/* Focus state for the input */
+.search-bar .search-input:focus {
+  background: transparent;
+  color: #000000;
+  outline: none;
+  border: none;
+}
+
+.search-bar .search-input::placeholder {
+  color: #9ca3af;
+}
+
+form.search-bar {
+  display: flex; 
+  align-items: center;
+  width: 100%;
+  max-width: 500px;
+  padding: 20px 20px; 
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e7eb;
+  margin: 0 auto;
+}
+
+/* Focus state for form container */
+form.search-bar:focus-within {
+  background-color: #ffffff;
+  border-color: #e5e7eb;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+form.search-bar input.search-input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-size: 16px;
+  color: #000000;
+  outline: none;
+  padding: 0;
+  margin: 0;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+/* Focus state for specific input */
+form.search-bar input.search-input:focus {
+  background: transparent;
+  color: #000000;
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
+
+form.search-bar input.search-input::placeholder {
+  color: #9ca3af;
+}
+
+/* Mobile responsive styles */
+@media (max-width: 1024px) {
+  .search-bar,
+  form.search-bar {
+    max-width: 450px;
+  }
+}
+
+@media (max-width: 768px) {
+  .search-bar,
+  form.search-bar {
+    max-width: 90%;
+    width: 90%;
+    margin: 0 auto;
+    padding: 16px 18px;
+    border-radius: 10px;
+  }
+
+  .search-bar .search-input,
+  form.search-bar input.search-input {
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+
+  .search-bar .search-input::placeholder,
+  form.search-bar input.search-input::placeholder {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .search-bar,
+  form.search-bar {
+    width: 88%;
+    max-width: 88%;
+    margin: 0 auto;
+    padding: 14px 16px;
+    border-radius: 8px;
+  }
+
+  .search-bar .search-input,
+  form.search-bar input.search-input {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 360px) {
+  .search-bar,
+  form.search-bar {
+    width: 85%;
+    max-width: 85%;
+    margin: 0 auto;
+    padding: 12px 14px;
+  }
+}

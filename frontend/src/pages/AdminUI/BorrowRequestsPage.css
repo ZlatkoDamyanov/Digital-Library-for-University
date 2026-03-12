@@ -1,0 +1,443 @@
+/* BorrowRequestsPage.css */
+
+.borrow-requests-page {
+  padding: 0 0 2rem 0;
+  background: #f5f7fa;
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.borrow-requests-page.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+/* Header Section */
+.requests-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.requests-header h1 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #111827;
+  margin: 0;
+}
+
+.sort-btn {
+  background: none;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.sort-icon {
+  font-size: 1rem;
+}
+
+.status-legend {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.status-item {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.status-item::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}
+
+.status-item.overdue {
+  background-color: #FEE2E2;
+  color: #DC2626;
+}
+
+.status-item.overdue::before {
+  background-color: #DC2626;
+}
+
+.status-item.pending {
+  background-color: #FEF3C7;
+  color: #D97706;
+}
+
+.status-item.pending::before {
+  background-color: #D97706;
+}
+
+.status-item.borrowed {
+  background-color: #DCFCE7;
+  color: #16A34A;
+}
+
+.status-item.borrowed::before {
+  background-color: #16A34A;
+}
+
+/* Row styles based on status */
+.borrow-requests-table tr.overdue {
+  background-color: #FEF2F2;
+}
+
+.borrow-requests-table tr.pending {
+  background-color: #FFFBEB;
+}
+
+/* Status dropdown styles */
+.borrow-status-dropdown {
+  position: relative;
+  display: inline-block;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  min-width: 100px;
+  transition: all 0.2s ease;
+}
+
+.borrow-status-dropdown:hover {
+  border-color: #d1d5db;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.borrow-status-dropdown select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: transparent;
+  border: none;
+  padding: 8px 12px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  cursor: pointer;
+  outline: none;
+  width: 100%;
+  text-align: left;
+}
+
+.borrow-dropdown-arrow {
+  display: none;
+}
+
+/* Status Colors - White background with colored text */
+.borrow-status-dropdown.borrowed select {
+  color: #8b5cf6;
+}
+
+.borrow-status-dropdown.returned select {
+  color: #059669;
+}
+
+.borrow-status-dropdown.pending select {
+  color: #D97706;
+}
+
+.borrow-status-dropdown.overdue select {
+  color: #dc2626;
+}
+
+/* Dropdown options styling */
+.borrow-status-dropdown select option {
+  padding: 8px 12px !important;
+  font-size: 0.75rem !important;
+  font-weight: bold !important;
+  font-family: 'IBM Plex Sans', sans-serif !important;
+}
+
+.borrow-status-dropdown select option[value="PENDING"] {
+  color: #D97706 !important;
+  font-weight: bold !important;
+}
+
+.borrow-status-dropdown select option[value="BORROWED"] {
+  color: #8b5cf6 !important;
+  font-weight: bold !important;
+}
+
+.borrow-status-dropdown select option[value="RETURNED"] {
+  color: #059669 !important;
+  font-weight: bold !important;
+}
+
+.borrow-status-dropdown select option[value="OVERDUE"] {
+  color: #dc2626 !important;
+  font-weight: bold !important;
+}
+
+.borrow-status-dropdown select:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Remove background colors from rows */
+.borrow-requests-table tr.overdue,
+.borrow-requests-table tr.pending {
+  background-color: transparent;
+}
+
+/* Table Container */
+.borrow-table-container {
+  overflow-x: auto;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+.borrow-requests-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 800px;
+  table-layout: fixed;
+}
+
+/* Column widths */
+.borrow-requests-table th:nth-child(1),
+.borrow-requests-table td:nth-child(1) { width: 25%; }  /* Book - намалена на половина */
+.borrow-requests-table th:nth-child(2),
+.borrow-requests-table td:nth-child(2) { width: 20%; }  /* User */
+.borrow-requests-table th:nth-child(3),
+.borrow-requests-table td:nth-child(3) { width: 15%; }  /* Status */
+.borrow-requests-table th:nth-child(4),
+.borrow-requests-table td:nth-child(4) { width: 15%; }  /* Borrowed date */
+.borrow-requests-table th:nth-child(5),
+.borrow-requests-table td:nth-child(5) { width: 15%; }  /* Return date */
+.borrow-requests-table th:nth-child(6),
+.borrow-requests-table td:nth-child(6) { width: 15%; }  /* Due date */
+
+.borrow-requests-table th {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+  background: #f9fafb;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151;
+}
+
+.borrow-requests-table td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+  vertical-align: middle;
+}
+
+.borrow-requests-table tbody tr:nth-child(odd) {
+  background-color: #f9fafb;
+}
+
+.borrow-requests-table tbody tr:nth-child(even) {
+  background-color: #ffffff;
+}
+
+.borrow-requests-table tr:hover {
+  background-color: #f3f4f6 !important;
+}
+
+.borrow-requests-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Book Cell - No flex, just inline content */
+.borrow-book-cell {
+  position: relative;
+}
+
+.borrow-book-cover {
+  display: inline-block;
+  width: 32px;
+  height: 44px;
+  border-radius: 4px;
+  overflow: hidden;
+  vertical-align: middle;
+  margin-right: 12px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.borrow-book-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.borrow-book-placeholder {
+  width: 100%;
+  height: 100%;
+  background: #e5e7eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  color: #9ca3af;
+}
+
+.borrow-book-title {
+  display: inline-block;
+  vertical-align: middle;
+  font-weight: 500;
+  color: #111827;
+  line-height: 1.4;
+  max-width: 140px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* User Cell */
+.borrow-user-cell {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.borrow-user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.borrow-user-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.borrow-user-name {
+  font-weight: 500;
+  color: #111827;
+  font-size: 0.9rem;
+}
+
+.borrow-user-email {
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+/* Status Cell */
+.borrow-requests-table td:nth-child(3) {
+  text-align: left;
+}
+
+/* Date Formatting */
+.borrow-requests-table td:nth-child(4),
+.borrow-requests-table td:nth-child(5),
+.borrow-requests-table td:nth-child(6) {
+  color: #6b7280;
+  font-size: 0.75rem;
+}
+
+/* Empty State */
+.borrow-requests-table td[colspan="6"] {
+  text-align: center;
+  padding: 2rem;
+  color: #6b7280;
+  font-style: italic;
+  font-size: 0.875rem;
+}
+
+/* Responsive Design - Simplified like AccountRequestsPage */
+
+/* Status Filters */
+.status-filters {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.status-filter {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  color: #374151;
+  transition: all 0.2s ease;
+}
+
+.status-filter:hover {
+  border-color: #d1d5db;
+  background: #f9fafb;
+}
+
+.status-filter.active {
+  border-width: 2px;
+}
+
+.status-filter.overdue {
+  border-color: #FCA5A5;
+  color: #DC2626;
+}
+
+.status-filter.overdue:hover,
+.status-filter.overdue.active {
+  background: #FEF2F2;
+}
+
+.status-filter.pending {
+  border-color: #FDE68A;
+  color: #D97706;
+}
+
+.status-filter.pending:hover,
+.status-filter.pending.active {
+  background: #FFFBEB;
+}
+
+.status-filter.borrowed {
+  border-color: #86EFAC;
+  color: #16A34A;
+}
+
+.status-filter.borrowed:hover,
+.status-filter.borrowed.active {
+  background: #F0FDF4;
+}
+
+/* Responsive styles for filters */
+@media (max-width: 768px) {
+  .status-filters {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .status-filter {
+    flex: 1;
+    min-width: calc(50% - 0.5rem);
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .status-filter {
+    min-width: 100%;
+  }
+} 

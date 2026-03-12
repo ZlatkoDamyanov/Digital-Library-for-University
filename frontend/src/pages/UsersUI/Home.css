@@ -1,0 +1,294 @@
+/* src/pages/UserUI/Home.css */
+
+  .home-page {
+    margin: 0;
+    padding: 0;
+    font-family: 'IBM Plex Sans', sans-serif;
+    background: #ffffff; 
+    color: #f8fafc;
+  }
+  
+  /* Header and Hero wrapper with background */
+  .header-hero-wrapper {
+    position: relative;
+    background: url('../../assets/images/SearchScreen.png') center/cover no-repeat;
+  }
+
+  /* Header wrapper with overlay */
+  .header-wrapper {
+    position: relative;
+  }
+
+  .header-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+  }
+
+  /* Hero секция */
+  .hero {
+    position: relative;
+    height: 55vh;
+    background: transparent;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+  }
+  
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    margin: 0 auto;
+    padding-top: 10vh;
+    text-align: center;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    color: #e5e7eb;
+  }
+  
+  .hero-title {
+    font-size: 48px;
+    line-height: 1.2;
+    margin-bottom: 32px;
+    color: #ffffff;
+  }
+  
+  /* Секция Всички книги */
+  .all-books-section {
+    background: #ffffff; /* Бял фон */
+    padding: 20px 20px 30px 20px;
+    max-width: 1240px;
+    margin: 0 auto;
+  }
+
+  /* Section header with title and filter */
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .all-books-section .section-title {
+    color: #000000; 
+    font-size: 32px !important;
+    font-weight: 700;
+    margin: 0;
+    text-align: left; 
+  }
+
+  /* Filter container and select */
+  .filter-container {
+    display: flex;
+    align-items: center;
+  }
+
+  .filter-select {
+    padding: 10px 15px;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #374151;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-width: 140px;
+    touch-action: manipulation;
+  }
+
+  .filter-select:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  }
+
+  .filter-select:hover {
+    border-color: #d1d5db;
+  }
+
+  /* Responsive design */
+  @media (max-width: 1024px) {
+    .all-books-section {
+      padding: 18px 18px 28px 18px;
+    }
+
+    .all-books-section .section-title {
+      font-size: 28px !important;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero {
+      height: 35vh;
+    }
+
+    .hero-content {
+      padding-top: 6vh;
+      padding-left: 1.5rem;
+      padding-right: 1.5rem;
+    }
+
+    .hero-title {
+      font-size: 36px;
+      margin-bottom: 24px;
+    }
+
+    .hero-subtitle {
+      font-size: 12px;
+      letter-spacing: 1.5px;
+      margin-bottom: 12px;
+    }
+
+    .section-header {
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .all-books-section .section-title {
+      font-size: 26px !important;
+      text-align: center;
+    }
+
+    .filter-container {
+      width: 90%;
+      justify-content: center;
+    }
+
+    .filter-select {
+      width: 100%;
+      max-width: 300px;
+      height: 44px; /* Larger touch target */
+      font-size: 16px; /* Prevents zoom on iOS */
+      padding: 12px 16px;
+      text-align: center;
+    }
+
+    .all-books-section {
+      width: 90%;
+      margin: 0 auto;
+      padding: 18px 20px 24px 20px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero {
+      height: 30vh;
+    }
+
+    .hero-content {
+      padding-top: 4vh;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    .hero-title {
+      font-size: 28px;
+      margin-bottom: 20px;
+      line-height: 1.1;
+    }
+
+    .hero-subtitle {
+      font-size: 11px;
+      letter-spacing: 1px;
+      margin-bottom: 10px;
+    }
+
+    .all-books-section .section-title {
+      font-size: 24px !important;
+    }
+
+    .all-books-section {
+      width: 88%;
+      margin: 0 auto;
+      padding: 16px 18px 22px 18px;
+    }
+
+    .section-header {
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .filter-container {
+      width: 88%;
+    }
+
+    .filter-select {
+      font-size: 16px;
+      padding: 10px 14px;
+      border-radius: 6px;
+    }
+  }
+
+  @media (max-width: 360px) {
+    .hero {
+      height: 25vh;
+    }
+
+    .hero-content {
+      padding-top: 3vh;
+      padding-left: 0.75rem;
+      padding-right: 0.75rem;
+    }
+
+    .hero-title {
+      font-size: 24px;
+      margin-bottom: 16px;
+    }
+
+    .all-books-section .section-title {
+      font-size: 22px !important;
+    }
+
+    .all-books-section {
+      width: 85%;
+      margin: 0 auto;
+      padding: 14px 16px 20px 16px;
+    }
+
+    .filter-container {
+      width: 85%;
+    }
+  }
+
+  /* Landscape orientation adjustments */
+  @media (max-width: 768px) and (orientation: landscape) {
+    .hero {
+      height: 45vh;
+    }
+
+    .hero-content {
+      padding-top: 6vh;
+    }
+
+    .hero-title {
+      font-size: 32px;
+    }
+  }
+
+  @media (max-width: 480px) and (orientation: landscape) {
+    .hero {
+      height: 40vh;
+    }
+
+    .hero-title {
+      font-size: 26px;
+    }
+  }
+  

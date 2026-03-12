@@ -1,0 +1,389 @@
+/* Стилове за страницата с резултати от търсенето */
+
+.search-results-page {
+  margin: 0;
+  padding: 0;
+  font-family: 'IBM Plex Sans', sans-serif;
+  background: #ffffff; 
+  color: #f8fafc;
+}
+
+/* Обвивка за header и search с background изображение */
+.header-search-wrapper {
+  position: relative;
+  background: url('../../assets/images/SearchScreen.png') center/cover no-repeat;
+}
+
+/* Обвивка за header с overlay */
+.header-wrapper {
+  position: relative;
+}
+
+.header-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+/* Hero секция за търсенето */
+.search-hero {
+  position: relative;
+  height: 55vh;
+  background: transparent;
+}
+
+.search-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.search-hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
+  padding-top: 10vh;
+  text-align: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.search-hero-subtitle {
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  color: #e5e7eb;
+}
+
+.search-hero-title {
+  font-size: 48px;
+  line-height: 1.2;
+  margin-bottom: 32px;
+  color: #ffffff;
+}
+
+/* Секция с резултатите от търсенето */
+.search-results-section {
+  background: #ffffff;
+  padding: 20px 20px 30px 20px;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+/* Header на секцията с заглавие и информация за резултатите */
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.search-results-section .section-title {
+  color: #000000; 
+  font-size: 32px !important;
+  font-weight: 700;
+  margin: 0;
+  text-align: left; 
+}
+
+/* Информация за резултатите */
+.results-info {
+  display: flex;
+  align-items: center;
+}
+
+.query-text {
+  color: #6b7280;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.query-text strong {
+  color: #374151;
+  font-weight: 600;
+}
+
+/* Съобщение за грешка */
+.error-message {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.error-message .status-text.error {
+  color: #dc2626;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/* Съобщение при липса на резултати */
+.no-results-message {
+  text-align: center;
+  padding: 60px 20px;
+  color: #6b7280;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.no-results-message h3 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 16px;
+}
+
+.no-results-message p {
+  font-size: 16px;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.no-results-message ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.no-results-message li {
+  padding: 8px 0;
+  font-size: 15px;
+  position: relative;
+  padding-left: 20px;
+}
+
+.no-results-message li:before {
+  content: "•";
+  color: #3b82f6;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+/* Адаптивен дизайн */
+@media (max-width: 1024px) {
+  .search-results-section {
+    padding: 18px 18px 28px 18px;
+  }
+
+  .search-results-section .section-title {
+    font-size: 28px !important;
+  }
+
+  .query-text {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .search-hero {
+    height: 35vh;
+  }
+
+  .search-hero-content {
+    padding-top: 6vh;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .search-hero-title {
+    font-size: 36px;
+    margin-bottom: 24px;
+  }
+
+  .search-hero-subtitle {
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    margin-bottom: 12px;
+  }
+
+  .search-results-section .section-title {
+    font-size: 26px !important;
+  }
+
+  .search-results-section {
+    width: 90%;
+    margin: 0 auto;
+    padding: 18px 20px 24px 20px;
+  }
+
+  .section-header {
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+
+  .query-text {
+    font-size: 14px;
+  }
+
+  .no-results-message {
+    padding: 35px 20px;
+  }
+
+  .no-results-message h3 {
+    font-size: 22px;
+  }
+
+  .no-results-message p {
+    font-size: 16px;
+  }
+
+  .no-results-message li {
+    font-size: 15px;
+  }
+
+  .error-message {
+    padding: 35px 20px;
+  }
+
+  .error-message .status-text.error {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 480px) {
+  .search-hero {
+    height: 25vh;
+  }
+
+  .search-hero-content {
+    padding-top: 4vh;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .search-hero-title {
+    font-size: 28px;
+    margin-bottom: 20px;
+    line-height: 1.1;
+  }
+
+  .search-hero-subtitle {
+    font-size: 11px;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+  }
+
+  .search-results-section .section-title {
+    font-size: 24px !important;
+  }
+
+  .search-results-section {
+    width: 88%;
+    margin: 0 auto;
+    padding: 16px 18px 22px 18px;
+  }
+
+  .section-header {
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+
+  .query-text {
+    font-size: 13px;
+  }
+
+  .no-results-message {
+    padding: 30px 15px;
+  }
+
+  .no-results-message h3 {
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+
+  .no-results-message p {
+    font-size: 14px;
+    margin-bottom: 16px;
+  }
+
+  .no-results-message li {
+    font-size: 13px;
+    padding: 6px 0;
+    padding-left: 18px;
+  }
+
+  .error-message {
+    padding: 25px 15px;
+  }
+
+  .error-message .status-text.error {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 360px) {
+  .search-hero {
+    height: 20vh;
+  }
+
+  .search-hero-content {
+    padding-top: 3vh;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  .search-hero-title {
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+
+  .search-results-section .section-title {
+    font-size: 22px !important;
+  }
+
+  .search-results-section {
+    width: 85%;
+    margin: 0 auto;
+    padding: 14px 16px 20px 16px;
+  }
+
+  .query-text {
+    font-size: 12px;
+  }
+
+  .no-results-message {
+    padding: 25px 12px;
+  }
+
+  .no-results-message h3 {
+    font-size: 16px;
+  }
+
+  .no-results-message p {
+    font-size: 13px;
+  }
+
+  .no-results-message li {
+    font-size: 12px;
+    padding-left: 16px;
+  }
+}
+
+/* Настройки за landscape ориентация */
+@media (max-width: 768px) and (orientation: landscape) {
+  .search-hero {
+    height: 45vh;
+  }
+
+  .search-hero-content {
+    padding-top: 6vh;
+  }
+
+  .search-hero-title {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 480px) and (orientation: landscape) {
+  .search-hero {
+    height: 40vh;
+  }
+
+  .search-hero-title {
+    font-size: 26px;
+  }
+} 

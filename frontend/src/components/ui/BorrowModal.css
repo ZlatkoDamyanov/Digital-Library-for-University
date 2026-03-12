@@ -1,0 +1,611 @@
+/* BorrowModal.css */
+
+.borrow-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.borrow-modal {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  max-width: 550px;
+  width: 100%;
+  max-height: 90vh;
+  overflow: hidden;
+  font-family: 'IBM Plex Sans', sans-serif;
+}
+
+.borrow-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 16px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.borrow-modal-header h2 {
+  margin: 0;
+  color: #111827;
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding-bottom: 8px;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  color: #6b7280;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  touch-action: manipulation;
+}
+
+.close-button:hover {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+.borrow-modal-content {
+  padding: 16px;
+}
+
+.borrow-modal .book-info {
+  text-align: left;
+  margin-bottom: 16px;
+  background: #f8fafc;
+  border-radius: 12px;
+  border-left: 4px solid #2B3A9D;
+  padding: 12px;
+}
+
+.borrow-modal .book-title {
+  margin: 0;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #111827;
+  text-align: left;
+}
+
+.calendars-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.calendar-wrapper h4 {
+  text-align: center;
+  margin: 0 0 8px 0;
+  color: #374151;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.calendar {
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  overflow: hidden;
+  background: white;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  background: #f9fafb;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.calendar-title {
+  margin: 0;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.nav-button {
+  background: none;
+  border: none;
+  color: #6b7280;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 6px;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  touch-action: manipulation;
+}
+
+.nav-button:hover:not(:disabled) {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+.nav-button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.calendar-grid {
+  padding: 0;
+}
+
+.calendar-days-header {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  background: #f3f4f6;
+}
+
+.day-header {
+  padding: 6px 4px;
+  text-align: center;
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  border-right: 1px solid #e5e7eb;
+}
+
+.day-header:last-child {
+  border-right: none;
+}
+
+.calendar-days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.calendar-day {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  border-right: 1px solid #e5e7eb;
+  border-bottom: 1px solid #e5e7eb;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: #374151;
+  position: relative;
+  touch-action: manipulation;
+}
+
+.calendar-day:nth-child(7n) {
+  border-right: none;
+}
+
+.calendar-day.empty-day {
+  cursor: default;
+  background: #fafafa;
+}
+
+.calendar-day.valid-day:hover {
+  background: #f3f4f6;
+}
+
+.calendar-day.selectable {
+  background: white;
+  color: #111827;
+  font-weight: 500;
+}
+
+.calendar-day.selectable:hover {
+  background: #eff6ff;
+  color: #1d4ed8;
+}
+
+.borrow-modal .calendar-day.selected {
+  background: #E31C34;
+  color: white;
+  font-weight: 600;
+}
+
+.calendar-day.disabled {
+  color: #d1d5db;
+  cursor: not-allowed;
+  background: #f9fafb;
+}
+
+.calendar-day.disabled:hover {
+  background: #f9fafb;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: center;
+  padding-top: 8px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.btn-submit-full {
+  background: #2B3A9D;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 36px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: 'IBM Plex Sans', sans-serif;
+  min-width: 160px;
+  touch-action: manipulation;
+}
+
+.btn-submit-full:hover:not(:disabled) {
+  background: #1e2a73;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(43, 58, 157, 0.3);
+}
+
+.btn-submit-full:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+  .borrow-modal-overlay {
+    padding: 12px;
+  }
+
+  .borrow-modal {
+    max-width: 500px;
+    max-height: 85vh;
+  }
+
+  .calendars-container {
+    gap: 10px;
+  }
+
+  .calendar-title {
+    font-size: 0.8rem;
+  }
+
+  .calendar-day {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .borrow-modal-overlay {
+    padding: 4px;
+  }
+
+  .borrow-modal {
+    margin: 0;
+    max-width: none;
+    width: 98%;
+    height: 96vh;
+    border-radius: 16px;
+    overflow-y: auto;
+  }
+
+  .borrow-modal-header {
+    padding: 24px 28px;
+    flex-shrink: 0;
+  }
+
+  .borrow-modal-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .close-button {
+    padding: 14px;
+    font-size: 1.6rem;
+  }
+
+  .borrow-modal-content {
+    padding: 28px;
+    flex: 1;
+    overflow-y: auto;
+  }
+
+  .borrow-modal .book-info {
+    padding: 20px;
+    margin-bottom: 26px;
+    border-radius: 14px;
+  }
+
+  .borrow-modal .book-title {
+    font-size: 1.1rem;
+  }
+
+  .calendars-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 20px;
+  }
+
+  .calendar-wrapper h4 {
+    font-size: 1.1rem;
+    margin-bottom: 14px;
+    font-weight: 700;
+  }
+
+  .calendar {
+    border-radius: 14px;
+    width: 100%;
+  }
+
+  .calendar-header {
+    padding: 14px 18px;
+  }
+
+  .calendar-title {
+    font-size: 1rem;
+  }
+
+  .nav-button {
+    padding: 12px;
+  }
+
+  .calendar-day {
+    font-size: 0.9rem;
+    min-height: 48px;
+  }
+
+  .day-header {
+    padding: 12px 10px;
+    font-size: 0.85rem;
+  }
+
+  .btn-submit-full {
+    width: 100%;
+    min-width: auto;
+    padding: 18px 28px;
+    font-size: 20px;
+    border-radius: 12px;
+  }
+
+  .modal-actions {
+    padding-top: 20px;
+    margin-top: auto;
+    flex-shrink: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .borrow-modal-overlay {
+    padding: 2px;
+  }
+
+  .borrow-modal {
+    width: 99%;
+    height: 98vh;
+    border-radius: 12px;
+  }
+
+  .borrow-modal-header {
+    padding: 22px 26px;
+  }
+
+  .borrow-modal-header h2 {
+    font-size: 1.375rem;
+  }
+
+  .close-button {
+    padding: 12px;
+    font-size: 1.5rem;
+  }
+
+  .borrow-modal-content {
+    padding: 26px;
+  }
+
+  .borrow-modal .book-info {
+    padding: 18px;
+    margin-bottom: 24px;
+    border-radius: 12px;
+  }
+
+  .borrow-modal .book-title {
+    font-size: 1.05rem;
+  }
+
+  .calendars-container {
+    display: flex;
+    flex-direction: column;
+    gap: 26px;
+    margin-bottom: 18px;
+  }
+
+  .calendar-wrapper h4 {
+    font-size: 1rem;
+    margin-bottom: 12px;
+    font-weight: 700;
+  }
+
+  .calendar {
+    border-radius: 12px;
+    width: 100%;
+  }
+
+  .calendar-header {
+    padding: 12px 16px;
+  }
+
+  .calendar-title {
+    font-size: 0.9rem;
+  }
+
+  .nav-button {
+    padding: 10px;
+  }
+
+  .calendar-day {
+    font-size: 0.85rem;
+    min-height: 44px;
+  }
+
+  .day-header {
+    padding: 10px 8px;
+    font-size: 0.8rem;
+  }
+
+  .btn-submit-full {
+    padding: 16px 24px;
+    font-size: 18px;
+    border-radius: 10px;
+  }
+
+  .modal-actions {
+    padding-top: 18px;
+  }
+
+  /* Reduce hover effects on mobile */
+  .btn-submit-full:hover:not(:disabled) {
+    transform: none;
+    box-shadow: 0 4px 12px rgba(43, 58, 157, 0.2);
+  }
+
+  .close-button:hover {
+    background: #f9fafb;
+  }
+
+  .nav-button:hover:not(:disabled) {
+    background: #f3f4f6;
+  }
+
+  .calendar-day.selectable:hover {
+    background: #f8fafc;
+  }
+}
+
+@media (max-width: 360px) {
+  .borrow-modal-overlay {
+    padding: 1px;
+  }
+
+  .borrow-modal {
+    width: 99.5%;
+    height: 99vh;
+    border-radius: 8px;
+  }
+
+  .borrow-modal-header {
+    padding: 20px 24px;
+  }
+
+  .borrow-modal-header h2 {
+    font-size: 1.25rem;
+  }
+
+  .borrow-modal-content {
+    padding: 24px;
+  }
+
+  .borrow-modal .book-info {
+    padding: 16px;
+    margin-bottom: 22px;
+  }
+
+  .borrow-modal .book-title {
+    font-size: 1rem;
+  }
+
+  .calendars-container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 16px;
+  }
+
+  .calendar-wrapper h4 {
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+  }
+
+  .calendar-header {
+    padding: 10px 14px;
+  }
+
+  .calendar-title {
+    font-size: 0.8rem;
+  }
+
+  .calendar-day {
+    font-size: 0.8rem;
+    min-height: 40px;
+  }
+
+  .day-header {
+    padding: 8px 6px;
+    font-size: 0.75rem;
+  }
+
+  .btn-submit-full {
+    padding: 14px 20px;
+    font-size: 17px;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .close-button:hover {
+    background: none;
+    color: #6b7280;
+  }
+
+  .nav-button:hover:not(:disabled) {
+    background: none;
+    color: #6b7280;
+  }
+
+  .calendar-day.selectable:hover {
+    background: white;
+    color: #111827;
+  }
+
+  .calendar-day.valid-day:hover {
+    background: white;
+  }
+
+  .btn-submit-full:hover:not(:disabled) {
+    background: #2B3A9D;
+    transform: none;
+    box-shadow: none;
+  }
+
+  .close-button:active {
+    background: #f3f4f6;
+    transform: scale(0.95);
+  }
+
+  .nav-button:active:not(:disabled) {
+    background: #e5e7eb;
+    transform: scale(0.95);
+  }
+
+  .calendar-day.selectable:active {
+    background: #f3f4f6;
+    transform: scale(0.95);
+  }
+
+  .btn-submit-full:active:not(:disabled) {
+    background: #1e2a73;
+    transform: scale(0.98);
+  }
+} 

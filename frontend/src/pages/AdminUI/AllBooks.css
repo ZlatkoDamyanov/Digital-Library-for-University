@@ -1,0 +1,270 @@
+.all-books-container {
+    padding: 0 0 2rem 0;
+}
+  
+  .books-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .books-header h1 {
+    font-size: 24px;
+    font-weight: 600;
+    margin: 0;
+  }
+  
+  .actions {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .sort-btn {
+    background: none;
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+  
+  .create-btn {
+    background: #25388c !important;
+    color: #fff !important;
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+  }
+  
+  .create-btn:hover {
+    background: #1e2a6b !important;
+  }
+  
+  .table-scroll {
+    overflow-x: auto;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  }
+  
+  .books-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 800px;
+  }
+  
+  .books-table th,
+.books-table td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+  vertical-align: middle;
+}
+  
+  .books-table th {
+  background: #f9fafb;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #374151;
+}
+
+.books-table th:last-child,
+.books-table td:last-child {
+  text-align: center;
+}
+
+.books-table td {
+  vertical-align: middle;
+}
+
+.books-table .title-cell {
+  vertical-align: middle;
+}
+  
+  .title-cell {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  height: 60px;
+  padding: 0.75rem 0;
+}
+  
+  .all-books-container .book-cover {
+  width: 40px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: none;
+  background-color: transparent;
+  flex-shrink: 0;
+}
+
+.book-cover-placeholder {
+  width: 40px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f3f4f6;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.5rem;
+  color: #6b7280;
+  flex-shrink: 0;
+}
+  
+  .book-title-text {
+    font-weight: 500;
+    color: #111827;
+    max-width:400px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  /* Smaller font size for Author, Category, ISBN, and Date Created columns */
+  .books-table td:nth-child(2),
+  .books-table td:nth-child(3),
+  .books-table td:nth-child(4),
+  .books-table td:nth-child(5) {
+    font-size: 0.9rem;
+    color: #4B5563;
+  }
+  
+  /* ISBN column specific styles */
+  .books-table td:nth-child(4) {
+    font-family: monospace;
+    letter-spacing: 0.5px;
+  }
+  
+  .action-cell {
+  display: flex;
+  flex-direction: row;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 0.125rem;
+}
+
+.edit-btn,
+.delete-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+  text-decoration: none;
+  padding: 0.25rem;
+}
+
+.edit-btn img,
+.delete-btn img {
+  width: 16px;
+  height: 16px;
+}
+
+.edit-btn:hover {
+  background-color: #f3f4f6;
+}
+
+.delete-btn:hover {
+  background-color: #fef2f2;
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 8px;
+  padding: 2rem;
+  min-width: 400px;
+  max-width: 500px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.modal-content h3 {
+  margin: 0 0 1rem 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.modal-content p {
+  margin: 0.5rem 0;
+  color: #6b7280;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  margin-top: 2rem;
+}
+
+.cancel-btn,
+.confirm-btn {
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+}
+
+.cancel-btn {
+  background-color: #f3f4f6;
+  color: #374151;
+}
+
+.cancel-btn:hover {
+  background-color: #e5e7eb;
+}
+
+.confirm-btn {
+  background-color: #ef4444;
+  color: white;
+}
+
+.confirm-btn:hover {
+  background-color: #dc2626;
+}
+
+.books-table tbody tr td {
+  padding: 1rem;
+  border-bottom: 1px solid #e5e7eb;
+  color: #374151;
+}
+
+.books-table tbody tr td mark {
+  background-color: #fef3c7;
+  padding: 0.1em 0;
+  border-radius: 2px;
+}
