@@ -1,5 +1,5 @@
 # Digital-Library-for-University
-University Web Library project for my diploma work. Features user and admin panels, authentication, homepage with search bar, faculty sections, and a Recommended Books section. Built with a clean, user-friendly interface to manage and explore academic resources.
+Developed as a diploma project, this web-based library system provides user and admin panels, secure authentication, and account management. Key features include a library catalog with search functionality, the ability to reserve books online, and support for reading electronic versions. The system is designed with a clean, intuitive interface for easy access and management of academic resources.
 
 
 <img width="1907" height="873" alt="Екранна снимка 2026-03-12 193658" src="https://github.com/user-attachments/assets/53e06430-c56e-4c91-b674-ebc856d15464" />
